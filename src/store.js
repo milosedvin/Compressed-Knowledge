@@ -10,7 +10,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     basketItems: [
-      
+
     ],
     menuItems: [],
     orderItems: [],
@@ -25,24 +25,24 @@ export default new Vuex.Store({
       })
     },
     addBasketItems: (state, basketItems) => {
-      if(basketItems instanceof Array) {
+      if (basketItems instanceof Array) {
         basketItems.forEach(item => {
           if (state.basketItems.find(itemInArray => item.name === itemInArray.name)) {
-              item=state.basketItems.find(itemInArray => item.name === itemInArray.name);
-              item.quantity++;
+            item = state.basketItems.find(itemInArray => item.name === itemInArray.name);
+            item.quantity++;
           }
           else {
             state.basketItems.push({
               name: item.name,
               price: item.price,
               quantity: 1
-          })
+            })
           }
         })
       }
     },
     userStatus: (state, user) => {
-      if(user) {
+      if (user) {
         state.currentUser = user
       } else {
         state.currentUser = null
@@ -85,7 +85,7 @@ export default new Vuex.Store({
     setCheckoutItem(context) {
       context.commit('addCheckoutItem')
     },
-    setUser (context, user) {
+    setUser(context, user) {
       context.commit('userStatus', user);
     },
     setMenuItems: context => {
