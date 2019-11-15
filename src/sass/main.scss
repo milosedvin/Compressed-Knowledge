@@ -1,0 +1,19 @@
+
+
+
+$colorz: (
+    yellow: #F5C501,
+    red: #F23005,
+    pink: #F29B88,
+    cyan: #05DBF2,
+    blue: #0477BF,
+    black: #000,
+    white: #fff,
+);
+
+@mixin infobox_mixin($padding, $margin-bottom, $margin-top, $color) {
+    padding: $padding;
+    margin-bottom: $margin-bottom;
+    margin-top: $margin-top;
+    color: $color;
+}
